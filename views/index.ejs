@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <script type="text/javascript" src="https://fd-icons.s3.ap-south-1.amazonaws.com/sdk.js"></script>
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to <%= title %>
+  </p>
+  <button onclick="launchSDK()">Book FD</button>
+</body>
+
+<script type="text/javascript">
+  function launchSDK() {
+    document.Setu.FD.init({
+      authToken: "<%= sdkAccessToken %>",
+      refreshToken: "<%= sdkRefreshToken %>",
+      theme: {
+        textColor: "#20014b",
+        bgColor: "#42cacd",
+        logoUrl: "https://image.shutterstock.com/image-vector/abstract-vector-logo-design-template-600w-1971786323.jpg"
+      },
+      provider: "UJVN",
+      prefills: {
+        kycParams: {
+          email: "arjun@attam.in",
+          pan: "ABCD1234B",
+          mobile: "9998881776",
+        }
+      }
+      // prefills: {
+      //   amount: 25000,
+      //   tenure: 200,
+      //   kycParams: {
+      //     email: "ramesh@xyz.com",
+      //     pan: "ABCD1234E",
+      //     mobile: "9998887776",
+      //   },
+      //   personalParams: {
+      //     mothersName: "Rhea",
+      //     fathersName: "Kronos",
+      //     maritalStatus: 'MARRIED',
+      //     spouseName: "Hera",
+      //     qualification: "10TH",
+      //     occupation: "EMPLOYED",
+      //     designation: "SALARIED",
+      //     communicationAddress: "6th main, Subhash Nagar, Tumkur",
+      //     communicationPinCode: "560023",
+      //   },
+      //   nomineeParams: {
+      //     nomineeRelationship: "SON",
+      //     nomineeName: "Suresh",
+      //     nomineeDob: "1992-11-11",
+      //     nomineeEmail: "suresh@xyz.com",
+      //     nomineePincode: "560023",
+      //   },
+      //   maturityParams: {
+      //     maturityIfsc: "SBIN0050432",
+      //     maturityAccountNumber: "00112233445566"
+      //   }
+      // }
+
+    })
+  }
+</script>
+
+</html>
